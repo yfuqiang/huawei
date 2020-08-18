@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int data;
+    cin>>data;
+    queue<char> s;
+    while(data)
+    {
+        int k=data%10;
+        s.push(k+'0');
+        data/=10;
+    }
+    string res;
+    while(s.empty()!=1)
+    {
+        res+=s.front();
+        s.pop();
+    }
+    cout<<res<<endl;
+    
+    
+    
+    return 0;
+}
