@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string res;
+    cin>>res;
+    int i=0,j=res.size()-1;
+    while(i<j)
+    {
+        swap(res[i],res[j]);
+        i++;
+        j--;
+    }
+    cout<<res<<endl;
+    return 0;
+}
