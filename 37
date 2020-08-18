@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+//斐波那契数列函数
+int getTotalCount(int monthCount)
+{
+    int F[monthCount + 1];
+    F[0] = 1; //第一个月的兔子数，小兔子出生，然后开始长大。
+    F[1] = 1; //第二个月的兔子数，小兔子继续长大，慢慢变成老兔子。
+    F[2] = 2; //第三个月的兔子数，老兔子开始生小兔子了。后面出生的小兔子则与老兔子类似。
+    for(int i = 3; i < monthCount; i++)
+    {
+        F[i] = F[i-1] + F[i-2];
+    }
+    //返回第 monthCount 个月的兔子总数
+    return F[monthCount - 1];
+}
+//主函数，调用斐波那契数列函数的接口来得到每个月的兔子总数
+int main()
+{
+    int monthCount;
+    while(cin >> monthCount)
+    {
+        cout << getTotalCount(monthCount) << endl;
+    }
+    return 0;
+}
